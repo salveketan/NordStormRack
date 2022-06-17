@@ -1,4 +1,6 @@
 // BsBag
+// BsSearch
+import { BsSearch } from "react-icons/bs"
 import { BsBag } from "react-icons/bs";
 import {
     Box,
@@ -7,7 +9,6 @@ import {
     IconButton,
     Button,
     Stack,
-    Collapse,
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
@@ -62,7 +63,8 @@ export default function WithSubnavigation() {
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10} border={"1px solid black"} h={12} marginTop={7}>
                         {/* <DesktopNav /> */}
-                        <input type="text" placeholder='Search For Product Or Brand' style={{ width: "750px" }} />
+                        <BsSearch style={{width:"20px",height:"25px", marginTop:"10px", marginLeft:"7px"}}/> 
+                        <input type="text" placeholder=' Search For Product Or Brand' style={{ width: "750px",border:"0px" }} />
                     </Flex>
 
                     <Spacer />
@@ -81,6 +83,7 @@ export default function WithSubnavigation() {
                         href={'#'}>
                         Sign In
                     </Button>
+                    
                     {/* <Button
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'sm'}

@@ -14,7 +14,10 @@ const Main = () => {
                 <Text fontSize='30px' >
                     More to Rack, easier and faster
                 </Text>
-                <Button>Sign in</Button>
+                {/* <Button>Sign in</Button> */}
+                <Box as='button' w='20%' p={3} color='rgb(0,146,223)' border="1px solid rgb(0,146,223)" marginTop={2}  >
+                    Sign-In Or Create an Acount
+                </Box>
             </Box>
             <PromoCard />
             <Carousel />

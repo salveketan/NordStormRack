@@ -65,7 +65,7 @@ export default function Carousel() {
     return (
         <Box
             position={'relative'}
-            height={'600px'}
+            height={'750px'}
             width={'100'}
             overflow={'hidden'}
             display={"block"}
@@ -115,34 +115,52 @@ export default function Carousel() {
             </IconButton>
             {/* Slider */}
             <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                {cards.map((card, index) => (
-                    <Box
-                        key={index}
-                        height={'6xl'}
-                        position="relative"
-                        backgroundPosition="center"
-                        backgroundRepeat="no-repeat"
-                        backgroundSize="cover"
-                        backgroundImage={`url(${card.image})`}>
-                        {/* This is the block you need to change, to customize the caption */}
-                        <Container size="container.lg" height="600px" position="relative">
-                            <Stack
-                                spacing={6}
-                                w={'full'}
-                                maxW={'lg'}
-                                position="absolute"
-                                top="50%"
-                                transform="translate(0, -50%)">
-                                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                                    {card.title}
-                                </Heading>
-                                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
-                                    {card.text}
-                                </Text>
-                            </Stack>
-                        </Container>
-                    </Box>
-                ))}
+                {cards.map((card, index) => {
+
+                    return (
+                        <>
+
+                            <Box key={index} border="1px solid red">
+                                <Box
+                                    // key={index}
+                                    // height={'3xl'}
+                                    position="relative"
+                                    backgroundPosition="center"
+                                    backgroundRepeat="no-repeat"
+                                    backgroundSize="cover"
+                                    backgroundImage={`url(${card.image})`}>
+                                    {/* This is the block you need to change, to customize the caption */}
+                                    <Container size="container.lg" height="600px"
+                                        position="relative"
+                                        border="1px solid red"
+                                    >
+                                        <Stack
+                                            spacing={6}
+                                            w={'full'}
+                                            maxW={'lg'}
+                                            position="absolute"
+                                            top="80%"
+                                            right="90%"
+                                            transform="translate(0, -50%)">
+
+                                        </Stack>
+                                    </Container>
+                                    <Box bg='tomato' w='100%' p={4} color='white' h="150px">
+
+                                        <Heading fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
+                                            {card.title}
+                                        </Heading>
+                                        <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
+                                            {card.text}
+                                        </Text>
+                                    </Box>
+                                </Box>
+
+                            </Box>
+
+                        </>
+                    )
+                })}
             </Slider>
         </Box>
     );

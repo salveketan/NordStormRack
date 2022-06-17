@@ -1,17 +1,17 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Activewear from '../Pages/Activewear'
-import BagsAccessories from '../Pages/BagsAccessories'
-import Beauty from '../Pages/Beauty'
-import Clearence from '../Pages/Clearence'
-import FlashEvents from '../Pages/FlashEvents'
-import Gifts from '../Pages/Gifts'
-import Home from '../Pages/Home'
-import Kids from '../Pages/Kids'
+import Activewear from '../Pages/Activewear/Activewear'
+import BagsAccessories from '../Pages/BagAccessories/BagsAccessories'
+import Beauty from '../Pages/Beauty/Beauty'
+import Clearence from '../Pages/Clearence/Clearence'
+import FlashEvents from '../Pages/FlashEvents/FlashEvents'
+import Gifts from '../Pages/Gifts/Gifts'
+import Home from '../Pages/Home/Home'
+import Kids from '../Pages/Kids/Kids'
 import LandingPage from '../Pages/LandingPage/Main'
-import Men from '../Pages/Men'
-import Shoes from '../Pages/Shoes'
-import Women from '../Pages/Women'
+import Men from '../Pages/mens/Men'
+import Shoes from '../Pages/Shoes/Shoes'
+import Women from '../Pages/Womens/Women'
 import NavButton from './NavButton'
 import NavRouters from './NavRouters'
 
@@ -20,7 +20,7 @@ const AllRoutes = () => {
     return (
         <div>
             <NavButton />
-
+         
             {/* <NavRouters /> */}
             <Routes >
                 <Route path='/' element={<LandingPage />}></Route>

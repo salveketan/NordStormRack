@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import NavRouters from './NavRouters'
 
-const AllNavButtons = ({ isVisible }) => {
+
+const AllBagAccessoriesButtons = ({ isVisible }) => {
 
     const buttons = [
         { title: "Shoes1" },
@@ -10,10 +10,9 @@ const AllNavButtons = ({ isVisible }) => {
     ]
     return (
         <div>
-            
             {buttons.map((e) => <Box display={isVisible ? "block" : "none"}>{e.title}</Box>)}
         </div>
     )
 }
 
-export default AllNavButtons
+export default AllBagAccessoriesButtons;
