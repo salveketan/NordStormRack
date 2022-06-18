@@ -10,6 +10,7 @@ import {
     chakra,
     Tooltip,
     Text,
+    Divider
 } from '@chakra-ui/react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
@@ -59,7 +60,7 @@ function Rating({ rating, numReviews }) {
 
 function AllMensProducts({title, price, image, rating, review }) {
     return (
-        <Flex p={50} w="full" alignItems="center" justifyContent="center" border="1px solid red">
+        <Flex p={50} w="full" alignItems="center" justifyContent="center" >
             <Box
                 bg={useColorModeValue('white', 'gray.800')}
                 maxW="sm"
@@ -67,7 +68,7 @@ function AllMensProducts({title, price, image, rating, review }) {
                 rounded="lg"
                 shadow="lg"
                 position="relative"
-                border="1px solid red"
+                // border="1px solid red"
                 height="500px"
                 >
                 {data.isNew && (
@@ -117,7 +118,7 @@ function AllMensProducts({title, price, image, rating, review }) {
                            </Box>
                             {/* <Text numberOfLines={2} ellipsizeMode='end'> {title}</Text> */}
                         </Box>
-                        <Tooltip
+                        {/* <Tooltip
                             label="Add to cart"
                             bg="white"
                             placement={'top'}
@@ -126,16 +127,18 @@ function AllMensProducts({title, price, image, rating, review }) {
                             <chakra.a href={'#'} display={'flex'}>
                                 <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
                             </chakra.a>
-                        </Tooltip>
+                        </Tooltip> */}
                     </Flex>
 
                     <Flex justifyContent="space-between" alignContent="center">
                         <Rating rating={rating} numReviews={review} />
+                      
                         <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+                            
                             <Box as="span" color={'gray.600'} fontSize="lg">
-                                ₹
+                                ₹ {price}
                             </Box>
-                            {price}
+                           
                         </Box>
                     </Flex>
                 </Box>

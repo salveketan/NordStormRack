@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import AllMensProducts from './AllMenProduct'
 // import AllMensProducts from './AllMenProduct'
-
-
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/breadcrumb'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 const MensProducts = () => {
     const dispatch = useDispatch();
     const product = useSelector(state => state.MensProduct.product);
@@ -22,8 +22,20 @@ const MensProducts = () => {
     }, [])
     return (
         <div>
-            <Box bg='tomato' w='100%' p={4} color='white'>
-                crum
+            <Box w='100%' p={4} color='Black'>
+                <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href='#'>Products</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem isCurrentPage>
+                        <BreadcrumbLink href='#'>AllCategory</BreadcrumbLink>
+                    </BreadcrumbItem>
+                </Breadcrumb>
             </Box>
             <Box>
 
@@ -37,7 +49,7 @@ const MensProducts = () => {
                         <SimpleGrid columns={{ sm: 2, md: 3 }} spacing='40px'>
 
                             {product.map((e) => {
-                                return <Box key={e.id} border={"1px solid red"} >
+                                return <Box key={e.id}  >
                                     <Link to={`/mens/${e.id}`}>
                                         <AllMensProducts
                                             key={e.id}
