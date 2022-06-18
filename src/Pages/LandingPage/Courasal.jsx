@@ -40,25 +40,25 @@ export default function Carousel() {
     // This can be static or loaded from a server
     const cards = [
         {
-            title: 'Design Projects 1',
+            title: 'SWIMWEAR + SUNGLASSES + SANDALS + SHORTS FROM $20',
             text:
-                "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+                "Online & in stores through June 19! Take 20% off selected styles from kate spade new york, Ted Baker London, Steve Madden & more.",
             image:
-                'https://n.nordstrommedia.com/id/88a5efc6-c3b9-4b31-9a19-01445ff9190b.jpeg?h=720&w=1608',
+                'https://n.nordstrommedia.com/id/3c67fa87-474f-40d0-9b52-53b794baa14d.jpeg?h=720&w=1608',
         },
         {
-            title: 'Design Projects 2',
+            title: 'Classic Styles from Classic Brands',
             text:
-                "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+                "Here's how to dress for warmer weather.",
             image:
-                'https://n.nordstrommedia.com/id/684ef2e6-362c-49da-9a87-6b2421c00afc.jpeg?h=720&w=1608',
+                'https://n.nordstrommedia.com/id/8881ce44-5e3b-40e3-8ff7-122fab6adff7.jpeg?h=720&w=1608',
         },
         {
-            title: 'Design Projects 3',
+            title: 'Ends June 18 at 11:59PM PT',
             text:
-                "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+                "Selected styles for women, men and kids. Online only. Not combinable with any other offers.",
             image:
-                'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                'https://n.nordstrommedia.com/id/8c581ec3-f7eb-49ac-9ba3-436c2f419ae4.jpeg?h=720&w=1608',
         },
     ];
 
@@ -73,7 +73,7 @@ export default function Carousel() {
         >
 
             {/* CSS files for react-slick */}
-            <Box style={{ border: "1px soid red", padding: "10px" }}>
+            <Box style={{  padding: "10px" }}>
 
                 <link
 
@@ -120,7 +120,7 @@ export default function Carousel() {
                     return (
                         <>
 
-                            <Box key={index} border="1px solid red">
+                            <Box key={index}>
                                 <Box
                                     // key={index}
                                     // height={'3xl'}
@@ -132,7 +132,7 @@ export default function Carousel() {
                                     {/* This is the block you need to change, to customize the caption */}
                                     <Container size="container.lg" height="600px"
                                         position="relative"
-                                        border="1px solid red"
+                                        // border="1px solid red"
                                     >
                                         <Stack
                                             spacing={6}
@@ -145,9 +145,9 @@ export default function Carousel() {
 
                                         </Stack>
                                     </Container>
-                                    <Box bg='tomato' w='100%' p={4} color='white' h="150px">
+                                    <Box w='100%' p={4} color='black' h="150px" >
 
-                                        <Heading fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
+                                        <Heading fontSize={{ base: '1xl', md: '2xl', lg: '3xl' }} marginTop={4}>
                                             {card.title}
                                         </Heading>
                                         <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">

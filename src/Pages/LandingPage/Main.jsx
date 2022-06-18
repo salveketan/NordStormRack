@@ -11,31 +11,36 @@ const Main = () => {
     return (
         <div>
             <Box bg='white' w='100%' p={4} color='Black' align={'center'}>
-                <Text fontSize='30px' >
-                    More to Rack, easier and faster
+                <Text fontSize='29px'
+                    display="block"
+                    fontFamily="Brandon Text,Arial,sans-serif"
+                >
+                    More to Rack, easier and faster.
                 </Text>
                 {/* <Button>Sign in</Button> */}
-                <Box as='button' w='20%' p={3} color='rgb(0,146,223)' border="1px solid rgb(0,146,223)" marginTop={2}  >
+                <Box as='button' w='20%' p={5} color='rgb(0,146,223)' border="1px solid rgb(0,146,223)" marginTop={2}>
                     Sign-In Or Create an Acount
                 </Box>
             </Box>
             <PromoCard />
             <Carousel />
-            <Text fontSize='30px' align={'center'}>
+
+            <Heading as='h4' size='md' align={'center'} p={5}>
                 Here Today, Gone in a Flash
-            </Text>
+            </Heading>
             <Flash />
-            <Text fontSize='30px' align={'center'}>
+            <Heading as='h4' size='md' align={'center'} p={5}>
                 Wear on Repeat
-            </Text>
+            </Heading>
             <Reapeat />
-            <Text fontSize='30px' >
+            <Heading as='h4' size='md' align={'center'} p={5}>
                 Tending now
-            </Text>
+            </Heading>
             <Trending />
-            <Text fontSize='30px' align={'center'}>
+
+            <Heading as='h4' size='md' align={'center'} p={5}>
                 Know more
-            </Text>
+            </Heading>
             <More />
         </div>
     )

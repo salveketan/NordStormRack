@@ -9,10 +9,9 @@ const More = () => {
                 <GridItem w='100%' h='10' bg='blue.500' />
                 <GridItem w='100%' h='10' bg='blue.500' />
                 <GridItem w='100%' h='10' bg='blue.500' />
-               
             </Grid>
         </div>
     )
 }
 
-export default More
+export default More;

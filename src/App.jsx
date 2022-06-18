@@ -3,7 +3,7 @@ import './App.css';
 import AllRoutes from './Components/AllRoutes';
 import Fotter from './Components/Fotter';
 import Navbar from './Components/Navbar';
-import { Box, Center, ChakraProvider } from '@chakra-ui/react';
+import { Box, Center, ChakraProvider, Divider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
@@ -18,6 +18,7 @@ function App() {
               Take 20% OFF selected summer styles online and in stores through June 19. Exclusions apply. Shop now.
             </Center>
             <Navbar />
+            <Divider/>
             <AllRoutes />
             <Fotter />
           </ChakraProvider>
