@@ -63,8 +63,8 @@ export default function WithSubnavigation() {
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10} border={"1px solid black"} h={12} marginTop={7}>
                         {/* <DesktopNav /> */}
-                        <BsSearch style={{width:"20px",height:"25px", marginTop:"10px", marginLeft:"7px"}}/> 
-                        <input type="text" placeholder=' Search For Product Or Brand' style={{ width: "750px",border:"0px" }} />
+                        <BsSearch style={{ width: "20px", height: "25px", marginTop: "10px", marginLeft: "7px" }} />
+                        <input type="text" placeholder=' Search For Product Or Brand' style={{ width: "750px", border: "0px" }} />
                     </Flex>
 
                     <Spacer />
@@ -76,28 +76,20 @@ export default function WithSubnavigation() {
                     direction={'row'}
                     spacing={6}>
                     <Button
+                       
                         as={'a'}
-                        fontSize={'sm'}
+                        fontSize={'md'}
                         fontWeight={400}
                         variant={'link'}
-                        href={'#'}>
+                        href={'/singin'}>
                         Sign In
                     </Button>
-                    
-                    {/* <Button
-                        display={{ base: 'none', md: 'inline-flex' }}
-                        fontSize={'sm'}
-                        fontWeight={600}
-                        color={'white'}
-                        bg={'pink.400'}
-                        href={'#'}
-                        _hover={{
-                            bg: 'pink.300',
-                        }}>
-                        Sign Up
-                    </Button> */}
-                    <Box>
-                        <BsBag />
+
+                    <Box 
+                    as={"a"}
+                        href={'/cart'}
+                    >
+                        <BsBag style={{ height: "30px", width: "30px" }} />
                     </Box>
 
                 </Stack>

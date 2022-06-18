@@ -2,19 +2,19 @@
 import axios from "axios";
 import * as types from "./actionTypes";
 
-const feactMensDataRequest = (payload) => {
+const fetchMensDataRequest = (payload) => {
     return {
         type: types.FETCH_MENS_DATA_REQUEST,
         payload
     }
 }
-const feactMensDataSuccece = (payload) => {
+const fetchMensDataSuccece = (payload) => {
     return {
         type: types.FETCH_MENS_DATA_SUCCESS,
         payload
     }
 }
-const feactMensDataFailure = (payload) => {
+const fetchMensDataFailure = (payload) => {
     return {
         type: types.FETCH_MENS_DATA_FAILURE,
         payload
@@ -23,10 +23,31 @@ const feactMensDataFailure = (payload) => {
 
 export const MensData = (payload) => {
     return (dispatch) => {
-        dispatch(feactMensDataRequest())
+        dispatch(fetchMensDataRequest())
 
-        axios.get("http://localhost:8080/mensproduct")
-            .then((r) => dispatch(feactMensDataSuccece(r.data)))
-            .then((e) => dispatch(feactMensDataFailure(e.data)))
+        axios.get("https://fakestoreapi.com/products")
+            .then((r) => dispatch(fetchMensDataSuccece(r.data)))
+            .then((e) => dispatch(fetchMensDataFailure(e.data)))
     }
 }
+
+
+const singleMensDataRequest = (payload) => {
+    return {
+        type: types.FETCH_MENS_DATA_REQUEST,
+        payload
+    }
+}
+const singleMensDataSuccece = (payload) => {
+    return {
+        type: types.FETCH_MENS_DATA_SUCCESS,
+        payload
+    }
+}
+const singleMensDataFailure = (payload) => {
+    return {
+        type: types.FETCH_MENS_DATA_FAILURE,
+        payload
+    }
+}
+

@@ -26,6 +26,7 @@ function Clearence() {
           px={4}
           variant="ghost"
           position="relative"
+          // position="fixed"
           borderWidth="1px"
           borderColor="white"
           rounded="md"

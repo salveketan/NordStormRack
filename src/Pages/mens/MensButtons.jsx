@@ -18,10 +18,7 @@ const AllMensButtons = ({ isVisible }) => {
                 {/* {e.title} */}
                 </Box>
                 )}
-            {/* <Box display={isVisible ? "block" : "none"}>
-                <Link to="/mens">underwear</Link>
-                
-                </Box> */}
+ 
         </div>
     )
 }

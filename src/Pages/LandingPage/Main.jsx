@@ -18,9 +18,17 @@ const Main = () => {
                     More to Rack, easier and faster.
                 </Text>
                 {/* <Button>Sign in</Button> */}
-                <Box as='button' w='20%' p={5} color='rgb(0,146,223)' border="1px solid rgb(0,146,223)" marginTop={2}>
+                <Button
+                    as='a'
+                    w='20%'
+                    p={5}
+                    color='rgb(0,146,223)'
+                    border="1px solid rgb(0,146,223)"
+                    marginTop={2}
+                    href="/singin"
+                >
                     Sign-In Or Create an Acount
-                </Box>
+                </Button>
             </Box>
             <PromoCard />
             <Carousel />
@@ -39,7 +47,7 @@ const Main = () => {
             <Trending />
 
             <Heading as='h4' size='md' align={'center'} p={5}>
-                Know more
+                Rack Your Look
             </Heading>
             <More />
         </div>

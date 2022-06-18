@@ -4,9 +4,10 @@ const initState = {
     product: [],
     error: "",
     loading: false,
+    SingleProduct: {}
 }
 
-export const productreducer = (state=initState, action) => {
+export const productreducer = (state = initState, action) => {
     const { type, payload } = action;
 
     switch (type) {
@@ -25,6 +26,27 @@ export const productreducer = (state=initState, action) => {
             }
         }
         case types.FETCH_MENS_DATA_FAILURE: {
+            return {
+                ...state,
+                loading: false,
+                error: payload
+            }
+        }
+        case types.SINGLE_MENS_DATA_REQUEST: {
+            return {
+                ...state,
+                loading: true,
+                error: ""
+            }
+        }
+        case types.SINGLE_MENS_DATA_SUCCESS: {
+            return {
+                ...state,
+                loading: false,
+                SingleProduct: payload
+            }
+        }
+        case types.SINGLE_MENS_DATA_FAILURE: {
             return {
                 ...state,
                 loading: false,
