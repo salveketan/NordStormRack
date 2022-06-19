@@ -16,7 +16,7 @@ const ProductDetails = () => {
         SetProductDetails(r.data)
       })
   }, []);
-  console.log(productDetails);
+  // console.log(productDetails);
 
   return (
     <div>

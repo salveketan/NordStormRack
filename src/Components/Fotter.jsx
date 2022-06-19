@@ -89,7 +89,7 @@ export default function Fotter() {
           spacing={4}
           justify={{ md: 'space-between' }}
           align={{ md: 'center' }}>
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2022 Ketan Salve. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
             <Button label={'Twitter'} href={'#'}>
               <FaTwitter />

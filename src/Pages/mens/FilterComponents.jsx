@@ -12,17 +12,18 @@ import {
     MenuOptionGroup,
     MenuDivider,
 } from '@chakra-ui/react'
+import { useDispatch } from 'react-redux';
+import { MensData } from '../../Redux/MensProduct/action';
 
 const FilterComponents = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [category, sestCategory] = useState(searchParams.getAll("category") || []);
-
+    const dispatch = useDispatch();
 
     const handle = (value) => {
         sestCategory(value)
     }
-    // console.log(searchParams);
-    // console.log(category);
+
 
     useEffect(() => {
         if (category) {
@@ -30,9 +31,10 @@ const FilterComponents = () => {
             let param = {
                 category: searchParams.getAll("category")
             };
+            dispatch(MensData(param));
         }
     }, [category, searchParams, setSearchParams]);
-    console.log(category);
+    // console.log(category);
 
     return (
         <div>
@@ -40,6 +42,43 @@ const FilterComponents = () => {
                 <Box display={{ base: "none", md: "block" }} p="1rem 2rem">
                     {/* <Text fontSize={"2xl"}>Filter</Text>
                     <Text>category</Text> */}
+                    <Box p="3px">
+                        <CheckboxGroup
+                            colorScheme='green'
+                            defaultValue={category}
+                            onChange={handle}  >
+                            <VStack align={"baseline"}>
+                                <Menu >
+                                    <MenuButton
+                                        // px={1}
+                                        // py={1}
+                                        transition='all 0.2s'
+                                        borderRadius='md'
+                                        // borderWidth='1px'
+                                        _hover={{ bg: 'gray.400' }}
+                                        _expanded={{ bg: 'blue.300' }}
+                                        _focus={{ boxShadow: 'outline' }} >
+                                        <Box display={"flex"} w="200px" justifyContent="space-between">
+                                            <Box px={25} py={3} >
+                                                All Category
+                                            </Box>
+                                            <Box px={2} marginTop={4}>
+                                                <AiOutlinePlus />
+                                            </Box>
+                                        </Box>
+                                    </MenuButton>
+                                    <MenuList>
+                                        <MenuItem><Checkbox value='bags' color={"black"}>bags</Checkbox></MenuItem>
+                                        <MenuItem><Checkbox value="men's clothing" color={"black"}  >men's clothing</Checkbox></MenuItem>
+                                        <MenuDivider />
+                                        <MenuItem> <Checkbox value="electronics" color={"black"}>electronics</Checkbox></MenuItem>
+                                        <MenuItem> <Checkbox value="jewelery" color={"black"}>jewelery</Checkbox></MenuItem>
+                                    </MenuList>
+                                </Menu>
+                            </VStack>
+                        </CheckboxGroup>
+                    </Box>
+                    <Divider />
                     <Box p="3px">
                         <CheckboxGroup
                             colorScheme='blue'
@@ -55,8 +94,8 @@ const FilterComponents = () => {
                                         // borderWidth='1px'
                                         // _hover={{ bg: 'gray.400' }}
                                         _expanded={{ bg: 'blue.300' }}
-                                        // _focus={{ boxShadow: 'outline' }}
-                                         >
+                                    // _focus={{ boxShadow: 'outline' }}
+                                    >
                                         <Box display={"flex"} w="200px" justifyContent="space-between">
                                             <Box px={25} py={3} >
                                                 Color
@@ -90,11 +129,11 @@ const FilterComponents = () => {
                                         // py={1}
                                         transition='all 0.2s'
                                         borderRadius='md'
-                                        borderWidth='1px'
+                                        // borderWidth='1px'
                                         _hover={{ bg: 'gray.400' }}
                                         _expanded={{ bg: 'blue.300' }}
                                         _focus={{ boxShadow: 'outline' }} >
-                                        <Box display={"flex"} border="1px solid red" w="200px" justifyContent="space-between">
+                                        <Box display={"flex"} w="200px" justifyContent="space-between">
                                             <Box px={25} py={3} >
                                                 Size
                                             </Box>
@@ -114,43 +153,7 @@ const FilterComponents = () => {
                             </VStack>
                         </CheckboxGroup>
                     </Box>
-                    <Divider/>
-                    <Box p="3px">
-                        <CheckboxGroup
-                            colorScheme='green'
-                            defaultValue={category}
-                            onChange={handle}  >
-                            <VStack align={"baseline"}>
-                                <Menu >
-                                    <MenuButton
-                                        // px={1}
-                                        // py={1}
-                                        transition='all 0.2s'
-                                        borderRadius='md'
-                                        borderWidth='1px'
-                                        _hover={{ bg: 'gray.400' }}
-                                        _expanded={{ bg: 'blue.300' }}
-                                        _focus={{ boxShadow: 'outline' }} >
-                                        <Box display={"flex"} border="1px solid red" w="200px" justifyContent="space-between">
-                                            <Box px={25} py={3} >
-                                                Brand
-                                            </Box>
-                                            <Box px={2} marginTop={4}>
-                                                <AiOutlinePlus />
-                                            </Box>
-                                        </Box>
-                                    </MenuButton>
-                                    <MenuList>
-                                        <MenuItem><Checkbox value='bags' color={"black"}>bags</Checkbox></MenuItem>
-                                        <MenuItem><Checkbox value="men's clothing" color={"black"}  >men's clothing</Checkbox></MenuItem>
-                                        <MenuDivider />
-                                        <MenuItem> <Checkbox value="electronics" color={"black"}>electronics</Checkbox></MenuItem>
-                                        <MenuItem> <Checkbox value="jewelery" color={"black"}>jewelery</Checkbox></MenuItem>
-                                    </MenuList>
-                                </Menu>
-                            </VStack>
-                        </CheckboxGroup>
-                    </Box>
+
                     <Divider />
                     <Box p="3px">
                         <CheckboxGroup
@@ -164,11 +167,11 @@ const FilterComponents = () => {
                                         // py={1}
                                         transition='all 0.2s'
                                         borderRadius='md'
-                                        borderWidth='1px'
+                                        // borderWidth='1px'
                                         _hover={{ bg: 'gray.400' }}
                                         _expanded={{ bg: 'blue.300' }}
                                         _focus={{ boxShadow: 'outline' }} >
-                                        <Box display={"flex"} border="1px solid red" w="200px" justifyContent="space-between">
+                                        <Box display={"flex"} w="200px" justifyContent="space-between">
                                             <Box px={25} py={3} >
                                                 Feature
                                             </Box>
@@ -201,11 +204,11 @@ const FilterComponents = () => {
                                         // py={1}
                                         transition='all 0.2s'
                                         borderRadius='md'
-                                        borderWidth='1px'
+                                        // borderWidth='1px'
                                         _hover={{ bg: 'gray.400' }}
                                         _expanded={{ bg: 'blue.300' }}
                                         _focus={{ boxShadow: 'outline' }} >
-                                        <Box display={"flex"} border="1px solid red" w="200px" justifyContent="space-between">
+                                        <Box display={"flex"} w="200px" justifyContent="space-between">
                                             <Box px={25} py={3} >
                                                 Fit
                                             </Box>
@@ -238,11 +241,11 @@ const FilterComponents = () => {
                                         // py={1}
                                         transition='all 0.2s'
                                         borderRadius='md'
-                                        borderWidth='1px'
+                                        // borderWidth='1px'
                                         _hover={{ bg: 'gray.400' }}
                                         _expanded={{ bg: 'blue.300' }}
                                         _focus={{ boxShadow: 'outline' }} >
-                                        <Box display={"flex"} border="1px solid red" w="200px" justifyContent="space-between">
+                                        <Box display={"flex"} w="200px" justifyContent="space-between">
                                             <Box px={25} py={3} >
                                                 Price
                                             </Box>
@@ -275,11 +278,11 @@ const FilterComponents = () => {
                                         // py={1}
                                         transition='all 0.2s'
                                         borderRadius='md'
-                                        borderWidth='1px'
+                                        // borderWidth='1px'
                                         _hover={{ bg: 'gray.400' }}
                                         _expanded={{ bg: 'blue.300' }}
                                         _focus={{ boxShadow: 'outline' }} >
-                                        <Box display={"flex"} border="1px solid red" w="200px" justifyContent="space-between">
+                                        <Box display={"flex"} w="200px" justifyContent="space-between">
                                             <Box px={25} py={3} >
                                                 Ocsasion
                                             </Box>
@@ -312,13 +315,13 @@ const FilterComponents = () => {
                                         // py={1}
                                         transition='all 0.2s'
                                         borderRadius='md'
-                                        borderWidth='1px'
+                                        // borderWidth='1px'
                                         _hover={{ bg: 'gray.400' }}
                                         _expanded={{ bg: 'blue.300' }}
                                         _focus={{ boxShadow: 'outline' }} >
-                                        <Box display={"flex"} border="1px solid red" w="200px" justifyContent="space-between">
+                                        <Box display={"flex"} w="200px" justifyContent="space-between">
                                             <Box px={25} py={3} >
-                                               Length
+                                                Length
                                             </Box>
                                             <Box px={2} marginTop={4}>
                                                 <AiOutlinePlus />

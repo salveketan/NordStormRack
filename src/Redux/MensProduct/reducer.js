@@ -4,7 +4,8 @@ const initState = {
     product: [],
     error: "",
     loading: false,
-    SingleProduct: {}
+    SingleProduct: {},
+    singInData: []
 }
 
 export const productreducer = (state = initState, action) => {
@@ -32,28 +33,48 @@ export const productreducer = (state = initState, action) => {
                 error: payload
             }
         }
-        case types.SINGLE_MENS_DATA_REQUEST: {
+        // case types.SINGLE_MENS_DATA_REQUEST: {
+        //     return {
+        //         ...state,
+        //         loading: true,
+        //         error: ""
+        //     }
+        // }
+        // case types.SINGLE_MENS_DATA_SUCCESS: {
+        //     return {
+        //         ...state,
+        //         loading: false,
+        //         SingleProduct: payload
+        //     }
+        // }
+        // case types.SINGLE_MENS_DATA_FAILURE: {
+        //     return {
+        //         ...state,
+        //         loading: false,
+        //         error: payload
+        //     }
+        // }
+        case types.SIGNIN_REQUEST: {
             return {
                 ...state,
                 loading: true,
                 error: ""
             }
         }
-        case types.SINGLE_MENS_DATA_SUCCESS: {
+        case types.SIGNIN_SUCCESS: {
             return {
                 ...state,
                 loading: false,
-                SingleProduct: payload
+                singInData: payload
             }
         }
-        case types.SINGLE_MENS_DATA_FAILURE: {
+        case types.SIGNIN_FAILURE: {
             return {
                 ...state,
                 loading: false,
                 error: payload
             }
         }
-
         default:
             return state
     }
