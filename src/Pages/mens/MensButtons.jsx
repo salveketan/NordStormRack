@@ -6,19 +6,20 @@ import { Link } from 'react-router-dom'
 const AllMensButtons = ({ isVisible }) => {
 
     const buttons = [
-        {to:"/mens", title: "underwear" },
-        {to:"/shoes", title: "Shoes2" },
+        { to: "/mens", title: "Clothes" },
+        { to: "/mens", title: "Shoes" },
+        { to: "/mens", title: "Accessories" },
     ]
     return (
         <div>
 
             {buttons.map((e) =>
-             <Box display={isVisible ? "block" : "none"}>
+                <Box display={isVisible ? "block" : "none"}>
                     <Link to="/mens">{e.title}</Link>
-                {/* {e.title} */}
+                    {/* {e.title} */}
                 </Box>
-                )}
- 
+            )}
+
         </div>
     )
 }
